@@ -722,11 +722,6 @@ class JSSImporter(Processor):
             os.path.basename(source_item))
         self.output("Copied %s" % source_item)
 
-	package = self.jss.Package(self.pkg_name)
-	cat_name = self.category.name
-	pkg_update = (self.env[
-                "jss_changed_objects"]["jss_package_updated"])
-	self.update_object(cat_name, package, "category", pkg_update)
 
     def build_replace_dict(self):
         """Build dict of replacement values based on available input."""
