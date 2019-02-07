@@ -462,24 +462,7 @@ class JSSImporter(Processor):
             pkg_update = (self.env[
                 "jss_changed_objects"]["jss_package_updated"])
 
-            if self.category is None:
-                cat_name = self.category.name
-                print "Category is None, assigning to %s" % cat_name
-		self.update_object(cat_name, package, "category", pkg_update)
-            else:
-                cat_name = self.category.name
-                self.output("Category has already been assigned.")
-
-            self.update_object(os_requirements, package, "os_requirements",
-                               pkg_update)
-            self.update_object(package_info, package, "info", pkg_update)
-            self.update_object(package_notes, package, "notes", pkg_update)
-            self.update_object(package_priority, package, "priority",
-                                pkg_update)
-            self.update_object(package_reboot, package, "reboot_required",
-                                pkg_update)
-            self.update_object(package_boot_volume_required, package,
-                                "boot_volume_required", pkg_update)
+	
        
             # Ensure packages are on distribution point(s)
 
